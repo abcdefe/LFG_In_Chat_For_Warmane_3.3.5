@@ -1,7 +1,8 @@
 Global chat channel filter with white list for warmane 3.3.5
 
-
-== To Make Global Chat Channel more clear and explicitness == 
+features:
+* Automatically hide the yells of opposing factions
+* Can customize whitelist in "global" Channel, to make Chat Board more clear and explicitness
 
 Download Release Files. Extract to folder "interface"
 
