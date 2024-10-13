@@ -2,45 +2,6 @@ local _, core = ...;
 
 local config, filter = core.Config, core.Filter;
 
--- 配置界面相关
-local Panel = { instance = nil };
-
-function Panel:Init()
-    print('===========init=================')
-    local instance = CreateFrame('Frame', 'LFG_OptionFrame', UIParent, 'UIPanelScrollFrameTemplate');
-
-    if nil == instance then
-        print('eeeeeeeeeeeeeeeeeeeeeeee');
-    end
-
-    
-    print('===========done=================')
-
-    instance:SetSize(300, 300);
-    instance:SetPoint('CENTER', UIParent, 'CENTER');
-    
-    Panel.instance = instance;
-end
-
-function Panel:ToShow()
-    print('==========Show==================')
-    if nil == Panel.instance then
-        Panel:Init();
-    end
-
-    print('=========init done==================')
-
-    self.instance:Show();
-end
-
-function Panel:Hide()
-
-end
-
-function Panel:Toggle()
-
-end
-
 -- 命令行
 local function slashAnalize(str)
     -- 开
@@ -111,8 +72,6 @@ local function slashAnalize(str)
         print('type /lfgc clear -- for all options clear')
         print('----------------------------------------------------')
     end
-
-    -- Panel:ToShow();
 end
 
 SLASH__LFGINCHAT1 = '/lfgc';
