@@ -1,0 +1,17 @@
+## Interface: 30300
+## Title: LFG_In_Chat 
+## Notes: Make LFG easier.
+## Notes-zhTW: 让LFG更方便
+## Title-zhCN: 让LFG更方便
+## Author: Bowen
+## Version: 0.2
+## X-Date: 2024-10-11
+## X-Category: Chat
+## X-License: GPLv3
+## SavedVariables: LFGInChatDB
+## SavedVariablesPerCharacter: LFGInChatDB_Role
+## DefaultStatus: Enabled
+
+config.lua
+filter.lua
+init.lua
