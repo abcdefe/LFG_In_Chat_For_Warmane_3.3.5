@@ -1,5 +1,7 @@
 Global chat channel filter with white list for warmane 3.3.5
 
+Can use in Onyxia and Icecrown
+
 features:
 * Automatically hide the yells of opposing factions
 * Can customize whitelist in "global" Channel, to make Chat Board more clear and explicitness
