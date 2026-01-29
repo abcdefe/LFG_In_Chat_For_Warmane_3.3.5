@@ -1,11 +1,13 @@
 ## Interface: 30300
 ## Title: _LFG_In_Chat
-## Title-zhCN: [LFGC]聊天关注词
-## Notes: ChatFilter in Dala
-## Notes-zhCN: 在达拉然关注特定频道的内容
+## Title-zhCN: [LFGC]聊天关注词过滤
+## Notes: Chat Filter
+## Notes-zhCN: 对global频道及大喊进行关注词白名单过滤
 ## Author: Bowen
 ## Version: 1.0.0
 ## SavedVariablesPerCharacter: LFG_DB_ROLE
+## X-Category: Chat
+## X-Localizations: zhCN
 
 _LFG_In_Chat.xml
 _LFG_In_Chat.lua
