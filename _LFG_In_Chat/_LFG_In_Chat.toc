@@ -5,7 +5,7 @@
 ## Notes-zhCN: 对global频道及大喊进行关注词白名单过滤
 ## Author: Bowen
 ## Version: 1.0.0
-## Repository: https://github.com/abcdefe/LFG_In_Chat_For_Warmane_3.3.5
+## X-Website: https://github.com/abcdefe/LFG_In_Chat_For_Warmane_3.3.5
 ## SavedVariablesPerCharacter: LFG_DB_ROLE
 ## X-Category: Chat
 ## X-Localizations: zhCN
