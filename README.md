@@ -1,16 +1,43 @@
-Global chat channel filter with white list for warmane 3.3.5
+# 魔兽世界聊天关注词插件 v1.0.0
 
-features:
-* Automatically hide the yells of opposing factions
-* Can customize whitelist in "global" Channel, to make Chat Board more clear and explicitness
+## 插件简介
+本插件用于在达拉然过滤特定聊天频道的内容，支持关注词高亮显示。
 
-Download Release Files. Extract to folder "interface"
+## 适用版本
+- **游戏版本**：魔兽世界 3.3.5a (WLK)
+- **接口版本**：30300
 
-```lua
-type /lfgc on -- for open
-type /lfgc off -- for close
-type /lfgc list -- for keywords list
-type /lfgc add {keywords}-- for filter options add
-type /lfgc rm {keywords}-- for filter options remove
-type /lfgc clear -- for all options clear
+## 主要功能
+1. 在达拉然区域过滤"综合"(global)频道和"大喊"频道的内容
+2. 大喊频道自动过滤对立阵营的发言
+3. 支持自定义关注词管理（新增/删除）
+4. 关注词绿色高亮显示（可选择直接过滤）
+5. 插件开关功能
+6. 配置按角色保存
+
+## 安装步骤
+1. 解压 ChatFilter.zip
+2. 将 ChatFilter 文件夹复制到以下目录：
+   ```
+   World of Warcraft\Interface\AddOns\
+   ```
+3. 重启游戏或输入 `/reload` 重载界面
+4. 登录游戏后会提示插件已加载
+
+## 使用方法
+打开设置界面：
 ```
+/lfgc
+```
+
+## 更新日志
+
+### v1.0.0 (2025-01-29)
+- 初始版本发布
+- 支持达拉然区域过滤
+- 支持自定义关注词管理
+- 支持关注词绿色高亮
+- 支持阵营识别
+
+## 反馈与支持
+如有问题或建议，欢迎反馈。

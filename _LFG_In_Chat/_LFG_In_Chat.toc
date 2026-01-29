@@ -1,17 +1,11 @@
 ## Interface: 30300
-## Title: LFG_In_Chat 
-## Notes: Make LFG easier.
-## Notes-zhTW: 让LFG更方便
-## Title-zhCN: 让LFG更方便
+## Title: _LFG_In_Chat
+## Title-zhCN: [LFGC]聊天关注词
+## Notes: ChatFilter in Dala
+## Notes-zhCN: 在达拉然关注特定频道的内容
 ## Author: Bowen
-## Version: 0.2
-## X-Date: 2024-10-11
-## X-Category: Chat
-## X-License: GPLv3
-## SavedVariables: LFGInChatDB
-## SavedVariablesPerCharacter: LFGInChatDB_Role
-## DefaultStatus: Enabled
+## Version: 1.0.0
+## SavedVariablesPerCharacter: LFG_DB_ROLE
 
-config.lua
-filter.lua
-init.lua
+_LFG_In_Chat.xml
+_LFG_In_Chat.lua
