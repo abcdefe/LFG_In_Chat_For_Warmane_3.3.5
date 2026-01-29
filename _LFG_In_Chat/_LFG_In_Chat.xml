@@ -59,7 +59,7 @@
                 </Anchors>
                 <Layers>
                     <Layer level="OVERLAY">
-                        <FontString name="$parentText" inherits="GameFontNormal" text="启用关注词功能">
+                        <FontString name="$parentText" inherits="GameFontNormal" text="启用关注词功能,同时屏蔽对立阵营大喊">
                             <Anchors>
                                 <Anchor point="LEFT"/>
                             </Anchors>
@@ -67,7 +67,7 @@
                     </Layer>
                 </Layers>
             </Frame>
-            
+
             <!-- 高亮复选框 -->
             <CheckButton name="$parentHighlightCheckbox" inherits="UICheckButtonTemplate">
                 <Size x="24" y="24"/>
@@ -99,7 +99,7 @@
             </Frame>
             
             <!-- 当前区域 -->
-            <Frame name="$parentZoneFrame">
+            <!-- <Frame name="$parentZoneFrame">
                 <Size x="400" y="20"/>
                 <Anchors>
                     <Anchor point="TOPLEFT" relativePoint="TOPLEFT">
@@ -122,7 +122,7 @@
                         </FontString>
                     </Layer>
                 </Layers>
-            </Frame>
+            </Frame> -->
             
             <!-- 阵营语言 -->
             <Frame name="$parentFactionFrame">
@@ -242,7 +242,7 @@
         <Scripts>
             <OnLoad>
                 -- 设置高亮标签文本
-                ChatFilterConfigFrameHighlightLabelText:SetText("启用关注词绿色高亮 (否则默认展示)")
+                ChatFilterConfigFrameHighlightLabelText:SetText("启用关注词绿色高亮 (否则默认颜色展示)")
             </OnLoad>
             <OnDragStart>
                 self:StartMoving()
