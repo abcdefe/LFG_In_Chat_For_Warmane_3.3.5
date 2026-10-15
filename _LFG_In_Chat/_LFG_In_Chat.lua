@@ -111,17 +111,22 @@ local function HighlightFilterWords(msg, matchedWords)
     return highlightedMsg
 end
 
--- 聊天关注函数 - 综合频道(global)
+-- 聊天关注函数 - global频道
 local function ChatFilterChannel(self, event, msg, author, language, ...)
     -- 检查功能是否启用
     if not LFG_DB_ROLE or not LFG_DB_ROLE.enabled then
         return false, msg, author, language, ...
     end
 
-    -- 检查是否在达拉然
-    -- if not isInDalaran then
-    --     return false, msg, author, language, ...
-    -- end
+    -- 只过滤 global / WorldChat 频道，其他频道直接显示
+    local channelName = select(2, ...)
+    if not channelName then
+        return false, msg, author, language, ...
+    end
+    local lowerName = string.lower(channelName)
+    if lowerName ~= "global" and lowerName ~= "worldchat" then
+        return false, msg, author, language, ...
+    end
 
     -- 检查关注词列表是否为空
     if IsFilterWordsEmpty() then
