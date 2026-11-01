@@ -59,7 +59,7 @@
                 </Anchors>
                 <Layers>
                     <Layer level="OVERLAY">
-                        <FontString name="$parentText" inherits="GameFontNormal" text="启用关注词功能,同时屏蔽对立阵营大喊">
+                        <FontString name="$parentText" inherits="GameFontNormal" text="启用关注词功能">
                             <Anchors>
                                 <Anchor point="LEFT"/>
                             </Anchors>

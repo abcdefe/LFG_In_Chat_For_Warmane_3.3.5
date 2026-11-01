@@ -161,11 +161,8 @@ local function ChatFilterYell(self, event, msg, author, language, ...)
     --     return false, msg, author, language, ...
     -- end
 
-    -- 大喊频道需要判断阵营
-    -- 如果语言与玩家不同,说明是对立阵营,关注掉
-    if language and playerLanguage and language ~= playerLanguage then
-        return true
-    end
+    -- whitemane服: 联盟/部落语言互通，不对立阵营做屏蔽，
+    -- 对当前阵营和对立阵营都执行相同的关注词过滤
 
     -- 检查关注词列表是否为空
     if IsFilterWordsEmpty() then
@@ -192,7 +189,7 @@ end
 local function RegisterChatFilters()
     -- WorldChat频道使用通用关注
     ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", ChatFilterChannel)
-    -- 大喊频道使用阵营关注
+    -- 大喊频道使用通用关注
     ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", ChatFilterYell)
 end
 
@@ -223,7 +220,7 @@ local function InitializeUI()
 
     -- 设置说明文本
     infoText:SetText(
-        "关注规则:\n1. WorldChat频道: 仅包含关注词的发言显示\n2. 大喊频道: 仅同阵营包含关注词的发言显示\n3. 关注词高亮: 高亮显示关注词")
+        "关注规则:\n1. WorldChat频道: 仅包含关注词的发言显示\n2. 大喊频道: 仅包含关注词的发言显示\n3. 关注词高亮: 高亮显示关注词")
 
     -- 启用复选框事件
     enableCheckbox:SetScript("OnClick", function(self)
