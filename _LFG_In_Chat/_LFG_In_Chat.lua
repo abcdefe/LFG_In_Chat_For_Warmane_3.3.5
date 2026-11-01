@@ -111,20 +111,20 @@ local function HighlightFilterWords(msg, matchedWords)
     return highlightedMsg
 end
 
--- 聊天关注函数 - global频道
+-- 聊天关注函数 - WorldChat频道
 local function ChatFilterChannel(self, event, msg, author, language, ...)
     -- 检查功能是否启用
     if not LFG_DB_ROLE or not LFG_DB_ROLE.enabled then
         return false, msg, author, language, ...
     end
 
-    -- 只过滤 global / WorldChat 频道，其他频道直接显示
+    -- whitemane服: 全局发言通过 WorldChat 频道，只过滤该频道
     local channelName = select(2, ...)
     if not channelName then
         return false, msg, author, language, ...
     end
     local lowerName = string.lower(channelName)
-    if lowerName ~= "global" and lowerName ~= "worldchat" then
+    if lowerName ~= "worldchat" then
         return false, msg, author, language, ...
     end
 
@@ -190,7 +190,7 @@ end
 
 -- 注册聊天频道关注
 local function RegisterChatFilters()
-    -- global频道使用通用关注
+    -- WorldChat频道使用通用关注
     ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", ChatFilterChannel)
     -- 大喊频道使用阵营关注
     ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", ChatFilterYell)
@@ -223,7 +223,7 @@ local function InitializeUI()
 
     -- 设置说明文本
     infoText:SetText(
-        "关注规则:\n1. Global频道: 仅包含关注词的发言显示\n2. 大喊频道: 仅同阵营包含关注词的发言显示\n3. 关注词高亮: 高亮显示关注词")
+        "关注规则:\n1. WorldChat频道: 仅包含关注词的发言显示\n2. 大喊频道: 仅同阵营包含关注词的发言显示\n3. 关注词高亮: 高亮显示关注词")
 
     -- 启用复选框事件
     enableCheckbox:SetScript("OnClick", function(self)
