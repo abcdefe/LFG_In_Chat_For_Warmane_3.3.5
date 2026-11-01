@@ -119,7 +119,9 @@ local function ChatFilterChannel(self, event, msg, author, language, ...)
     end
 
     -- whitemane服: 全局发言通过 WorldChat 频道，只过滤该频道
-    local channelName = select(2, ...)
+    -- CHAT_MSG_CHANNEL 参数顺序: msg, author, language, channelString, channelID, ...
+    -- 频道名是 channelString，位于 vararg 第1位
+    local channelName = select(1, ...)
     if not channelName then
         return false, msg, author, language, ...
     end
