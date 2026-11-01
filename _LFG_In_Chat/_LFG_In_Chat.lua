@@ -111,24 +111,14 @@ local function HighlightFilterWords(msg, matchedWords)
     return highlightedMsg
 end
 
--- 聊天关注函数 - WorldChat频道
+-- 聊天关注函数 - 综合频道(WorldChat)
 local function ChatFilterChannel(self, event, msg, author, language, ...)
     -- 检查功能是否启用
     if not LFG_DB_ROLE or not LFG_DB_ROLE.enabled then
         return false, msg, author, language, ...
     end
 
-    -- whitemane服: 全局发言通过 WorldChat 频道，只过滤该频道
-    -- CHAT_MSG_CHANNEL 参数顺序: msg, author, language, channelString, channelID, ...
-    -- 频道名是 channelString，位于 vararg 第1位
-    local channelName = select(1, ...)
-    if not channelName then
-        return false, msg, author, language, ...
-    end
-    local lowerName = string.lower(channelName)
-    if lowerName ~= "worldchat" then
-        return false, msg, author, language, ...
-    end
+    -- 不对频道名做比对，直接对 CHAT_MSG_CHANNEL 消息进行关注词过滤
 
     -- 检查关注词列表是否为空
     if IsFilterWordsEmpty() then
@@ -189,7 +179,7 @@ end
 
 -- 注册聊天频道关注
 local function RegisterChatFilters()
-    -- WorldChat频道使用通用关注
+    -- 综合频道使用通用关注
     ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", ChatFilterChannel)
     -- 大喊频道使用通用关注
     ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", ChatFilterYell)
@@ -222,7 +212,7 @@ local function InitializeUI()
 
     -- 设置说明文本
     infoText:SetText(
-        "关注规则:\n1. WorldChat频道: 仅包含关注词的发言显示\n2. 大喊频道: 仅包含关注词的发言显示\n3. 关注词高亮: 高亮显示关注词")
+        "关注规则:\n1. 综合频道: 仅包含关注词的发言显示\n2. 大喊频道: 仅包含关注词的发言显示\n3. 关注词高亮: 高亮显示关注词")
 
     -- 启用复选框事件
     enableCheckbox:SetScript("OnClick", function(self)
